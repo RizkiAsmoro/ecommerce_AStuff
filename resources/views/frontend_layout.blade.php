@@ -14,7 +14,7 @@
         <div class="clearfix">
             <h1 class="header-title">AStuff</h1> 
             <div class="header-login">
-            <a hreff="">login</a>
+            <a href="/login">login</a>
             </div>
         </div>
     <nav class="navbar navbar-default">
