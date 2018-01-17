@@ -6,66 +6,38 @@
 
 @section ('content')
     <div class="row">
-        <div class="col-md-3">
+
+    @foreach($products as $product)    
+    <div class="col-md-3">
             <div class="product-item-container">
                 <img class="product-item-images" src="/img/hmprod.jpg"/>
                 <div class="product-item-description">
-                    <p>Hoodie</p>
-                    <p>Rp 250.000</p>
-                    <p>Discount 10%</p>
+                    <p>{{$product->name}}</p>
+                    <p>RP {{$product->price}}</p>
+                    <p>Discount {{$product->discount}}%</p>
                 </div>
                 <div class="product-item-cta">
-                    <button class"btn btn-primary">Beli</buttom>
-                </div>
+                    <button class"btn btn-primary beli-cta" data-id="{{$product->id}}">Beli</buttom>
             </div>
         </div>
-
-    <div class="row">
-        <div class="col-md-3">
-            <div class="product-item-container">
-                <img class="product-item-images" src="/img/hmprod.jpg"/>
-                <div class="product-item-description">
-                    <p>Hoodie</p>
-                    <p>Rp 250.000</p>
-                    <p>Discount 10%</p>
-                </div>
-                <div class="product-item-cta">
-                    <button class"btn btn-primary">Beli</buttom>
-                </div>
-            </div>
     </div>
+    @endforeach
+</div>
+@endsection
 
-    <div class="row">
-        <div class="col-md-3">
-            <div class="product-item-container">
-                <img class="product-item-images" src="/img/hmprod.jpg"/>
-                <div class="product-item-description">
-                    <p>Hoodie</p>
-                    <p>Rp 250.000</p>
-                    <p>Discount 10%</p>
-                </div>
-                <div class="product-item-cta">
-                    <button class"btn btn-primary">Beli</buttom>
-                </div>
-            </div>
-        </div>
+@section ('js')
+    
+    <script>
+        $(".beli-cta").on("click", function(event){
+            var el = event.target
+            var id = $(el).data('id');
+            alert("tambah cart :"+id);
 
-    <div class="row">
-        <div class="col-md-3">
-            <div class="product-item-container">
-                <img class="product-item-images" src="/img/hmprod.jpg"/>
-                <div class="product-item-description">
-                    <p>Hoodie</p>
-                    <p>Rp 250.000</p>
-                    <p>Discount 10%</p>
-                </div>
-                <div class="product-item-cta">
-                    <button class"btn btn-primary">Beli</buttom>
-                </div>
-            </div>
-    </div>
+            $.post('/cart/add-content',
+            {id:id},function(){
+            refreshCart();
+            })
+        });
 
-
-
-
+    </script>
 @endsection
