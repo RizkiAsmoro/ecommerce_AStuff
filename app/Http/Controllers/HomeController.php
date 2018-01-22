@@ -27,6 +27,6 @@ class HomeController extends Controller
         $data = [
             'products' => $products
         ];
-        return view('home',$data);
+        return view('/home',$data);
     }
 }

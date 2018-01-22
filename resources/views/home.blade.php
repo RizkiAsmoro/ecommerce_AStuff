@@ -17,7 +17,7 @@
                     <p>Discount {{$product->discount}}%</p>
                 </div>
                 <div class="product-item-cta">
-                    <button class"btn btn-primary beli-cta" data-id="{{$product->id}}">Beli</buttom>
+                    <button class="btn btn-primary beli-cta" data-id="{{$product->id}}">Beli</buttom>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
 
 @section ('js')
     
-    <script>
+    <script type="text/javascript">
         $(".beli-cta").on("click", function(event){
             var el = event.target
             var id = $(el).data('id');

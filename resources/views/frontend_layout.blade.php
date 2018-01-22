@@ -29,7 +29,7 @@
             </div>
             <div class="header-cart">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
-                <span class="badge" id"cart_count">0</span>
+                <span class="badge" id="cart_count">0</span>
             </div>  
         </div>
     <nav class="navbar navbar-default">
